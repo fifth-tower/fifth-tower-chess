@@ -1,6 +1,6 @@
 ## Creating your repo from the template
 
-[`demo`](http://chess.5-tower.online/) is optional but highly recommended. You can install them with
+[`demo`](http://chess.5-tower.online/)
 
 ## Developing
 
