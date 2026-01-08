@@ -1,0 +1,16 @@
+[package]
+name = "chess-core"
+version.workspace = true
+edition.workspace = true
+
+
+[dependencies]
+bevy_matchbox.workspace = true
+bevy.workspace = true
+leptos.workspace = true
+leptos-bevy-canvas.workspace = true
+serde.workspace = true
+bincode.workspace = true
+clap.workspace = true
+wasm-bindgen.workspace = true
+web-sys.workspace = true

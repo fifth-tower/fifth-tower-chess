@@ -1,0 +1,85 @@
+[package]
+name = "fifth-tower-chess"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+
+[workspace]
+members = ["crate/*"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["gj <gj88@gmail.com>"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]
+leptos.workspace = true
+leptos_meta.workspace = true
+leptos_router.workspace = true
+leptos-use = { workspace = true, features = ["storage", "use_clipboard"] }
+leptos-bevy-canvas.workspace = true
+leptos_hotkeys.workspace = true
+leptos_icons.workspace = true
+icondata_core.workspace = true
+icondata.workspace = true
+serde.workspace = true
+bincode.workspace = true
+codee.workspace = true
+clap.workspace = true
+chess-core.workspace = true
+tower.workspace = true
+console_error_panic_hook.workspace = true
+getrandom.workspace = true
+
+[workspace.dependencies]
+leptos = { version = "0.7", features = ["csr"] }
+leptos_meta = { version = "0.7" }
+leptos_router = { version = "0.7" }
+console_error_panic_hook = "0.1"
+
+leptos-bevy-canvas = { path = "../../rust/leptos/leptos-bevy-canvas" }
+leptos_hotkeys = { path = "../../rust/leptos/leptos-hotkeys/leptos_hotkeys" }
+leptos-use = { version = "0.15.8", features = ["storage", "use_clipboard","use_window"] }
+leptos_icons = { version = "0.5" }
+icondata = { version = "0.5", default-features = false, features = [
+    "ant-design-icons",
+] }
+icondata_core.version = "0.1"
+getrandom = { version = "0.3", features = ["wasm_js"] }
+
+chess-core = { path = "crate/chess-core" }
+tower = { path = "../fifth-tower", features = ["web"] }
+
+# bevy = { version = "0.15" }
+bevy = { version = "0.15", default-features = false, features = [
+    "bevy_state",
+    "bevy_ui",
+    "bevy_mesh_picking_backend",
+
+    "bevy_winit",
+    "x11",
+    "webgl2",
+    "png",
+    "ktx2",
+    "zstd",
+    "vorbis",
+    "x11",
+] }
+bevy_matchbox = { version = "0.11" }
+serde = "1.0"
+bincode = "1.3"
+codee = { version = "0.3", features = ["bincode_serde", "base64"] }
+clap = { version = "4.5", features = ["derive"] }
+
+wasm-bindgen = "0.2"
+web-sys = { version = "0.3", features = ["Document", "Window"] }
+
+
+[dev-dependencies]
+
+[profile.release]
+opt-level = 'z'
+lto = true
+codegen-units = 1
+panic = "abort"

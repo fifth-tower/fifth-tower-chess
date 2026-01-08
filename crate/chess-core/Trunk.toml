@@ -1,0 +1,7 @@
+[build]
+public_url = "/"
+
+[serve]
+port = 8080
+open = true
+no_spa = true
